@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Talker</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+ <html>
+ <head>
+   <title>Talker</title>
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
-<body>
+ </head>
+ <body>
   <div class="wrapper">
     <div class="iphone6 black">
       <div class="power"></div>
@@ -19,7 +19,7 @@
       <div class="speaker"></div>
       <div class="screen">
         <%= yield %>
-      </div>
+    </div>
       <a href="/">
         <div class="home-button"></div>
       </a>
@@ -43,5 +43,5 @@
   </script>
 
 
-</body>
-</html>
+ </body>
+ </html>

@@ -1,1 +1,62 @@
-<h1>talker index 페이지입니다.</h1>
+<div class="main-page">
+  <a href="/learn">
+    <button class="learn-button">가르치러 가기</button>
+  </a>
+  <section class="chat">
+   <% @chats.each do |c| %>
+      <% if c.chat_type == "bot" %>
+        <div class="left">
+          <div class="profile">
+            <div class="icon"></div>
+            <div class="name">심심이</div>
+          </div>
+          <div class="balloon">
+            <div class="tail"></div>
+            <div class="text"><%= c.chat_content %></div>
+          </div>
+        </div>
+      <% else %>
+        <div class="right">
+          <div class="profile">
+            <div class="icon"></div>
+            <div class="name">나</div>
+          </div>
+          <div class="balloon">
+            <div class="tail"></div>
+            <div class="text"><%= c.chat_content %></div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </section>
+  <%= form_tag '/talker', method: 'post', class: "chat-form" do %>
+    <input type="text" placeholder="입력..." name="ask">
+    <input type="submit" value="전송">
+  <% end %>
+</div>
+
+</div>
+      <a href="/">
+        <div class="home-button"></div>
+      </a>
+    </div>
+  </div>
+  
+  <script>
+  $(document).ready(function() {
+    //배경색 세팅
+    $iphone6 = $('.iphone6');
+    if( $iphone6.hasClass('silver') )
+      $('body').css('background', 'darkgray')
+    else if( $iphone6.hasClass('gold') )
+      $('body').css('background', 'lemonchiffon')
+
+    //스크롤을 가장 아래로
+    var $chat = $('.chat');
+    var height = $chat.prop('scrollHeight');
+    $chat.scrollTop(height);
+
+  });
+  </script>
+
+  

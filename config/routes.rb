@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+
   root 'talker#index'
   resources :talker, except: :index
   resources :learn
